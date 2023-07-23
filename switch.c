@@ -2,10 +2,10 @@
 
 /**
  * selector - selects the appropriate specifiers
- * @args: number of arguements
+ * @args: number of arguments
  * @printed: the printed characters
  * @format: the format specifier
- * Return: printed charcaters
+ * Return: printed characters
  */
 
 int selector(const char *format, va_list args, int printed)
