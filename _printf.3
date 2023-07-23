@@ -1,0 +1,44 @@
+.TH _printf 3
+.SH NAME
+_printf - A simple version of the printf function
+.SH SYNOPSIS
+.B _printf
+.I format
+.I arguments
+.SH DESCRIPTION
+_printf is a simple version of the printf function found in the C programming language. It can be used to print characters, strings, integers, and decimals (base 10).
+
+The format string is a text string that contains format specifiers. Each format specifier tells _printf how to print a particular type of data.
+
+The arguments are the data that will be printed. The data can be of any type that can be stored in a variable.
+
+For example, the following code will print the string "Hello, world!" to stdout:
+
+.B _printf("Hello, world!\n");
+
+The format string in this case is "Hello, world!". The argument is the empty string.
+
+For more information on format specifiers, see the man page for printf.
+.SH OPTIONS
+_printf does not support any options.
+.SH RETURN VALUE
+_printf returns the number of characters that were printed.
+.SH BUGS
+There are no known bugs in _printf.
+.SH AUTHOR
+Kelvin Carrington Tichana and Nana Owusu
+.SH COPYRIGHT
+Copyright (c) 2023 Kelvin Carrington Tichana and Nana Owusu.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
