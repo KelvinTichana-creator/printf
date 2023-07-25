@@ -44,6 +44,11 @@ int _printf(const char *format, ...)
  */
 int handle_conversion_specifier(char specifier, va_list args)
 {
+	if (specifier == '%')
+	{
+		_putchar('%');
+		return (1);
+	}
 	switch (specifier)
 	{
 		case 'c':
@@ -63,9 +68,6 @@ int handle_conversion_specifier(char specifier, va_list args)
 			return (print_hexadecimal(va_arg(args, unsigned int), 0));
 		case 'X':
 			return (print_hexadecimal(va_arg(args, unsigned int), 1));
-		case '%':
-			_putchar('%');
-			return (1);
 		case 'S':
 			return (print_special_string(va_arg(args, const char *)));
 		case 'p':
@@ -80,4 +82,3 @@ int handle_conversion_specifier(char specifier, va_list args)
 			return (2);
 	}
 }
-
