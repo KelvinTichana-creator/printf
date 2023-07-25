@@ -16,6 +16,6 @@ int print_special_string(const char *str);
 int print_memory_address(void *ptr);
 int print_reversed_string(const char *str);
 int print_rot13_string(const char *str);
-
+int print_unsigned_int(unsigned int num);
 
 #endif /* MAIN_H */

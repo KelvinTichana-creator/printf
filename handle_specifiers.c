@@ -47,7 +47,7 @@ int print_int(int num)
 {
 	char buffer[20];
 	int length = 0;
-        /* Handle negative numbers */
+
         if (num < 0)
         {
                 _putchar('-');
@@ -55,6 +55,33 @@ int print_int(int num)
         }
 
         /* Convert the integer to a string in reverse order */
+	do {
+                buffer[length++] = '0' + (num % 10);
+                num /= 10;
+        } while (num > 0);
+
+        /* Print the string in reverse order */
+        while (length > 0)
+        {
+                _putchar(buffer[length - 1]);
+                length--;
+        }
+        return (length);
+}
+
+/**
+ * print_unsigned_int - Prints an unsigned integer to stdout.
+ *
+ * @num: The unsigned integer to be printed.
+ *
+ * Return: The number of characters printed.
+ */
+int print_unsigned_int(unsigned int num)
+{
+	char buffer[20];
+	int length = 0;
+
+        /* Convert the unsigned integer to a string in reverse order */
 	do {
                 buffer[length++] = '0' + (num % 10);
                 num /= 10;

@@ -61,7 +61,7 @@ int handle_conversion_specifier(char specifier, va_list args)
 		case 'b':
 			return (print_binary(va_arg(args, unsigned int)));
 		case 'u':
-			return (print_int(va_arg(args, unsigned int)));
+			return (print_unsigned_int(va_arg(args, unsigned int)));
 		case 'o':
 			return (print_octal(va_arg(args, unsigned int)));
 		case 'x':
