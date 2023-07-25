@@ -17,5 +17,5 @@ int print_memory_address(void *ptr);
 int print_reversed_string(const char *str);
 int print_rot13_string(const char *str);
 
-#endif /* MAIN_H */
 
+#endif /* MAIN_H */

@@ -2,24 +2,12 @@
 #include "main.h"
 
 int handle_conversion_specifier(char specifier, va_list args);
-
 /**
  * _printf - Prints formatted output to the standard output.
- *
  * @format: A pointer to a character string containing the format.
- *          The format string is composed of zero or more directives.
- *          See the format specifiers documentation for more detail.
  * @...: The optional arguments to be inserted into the format string.
- *
  * Return: The number of characters printed (excluding the null byte used
- *         to end output to strings). On error, -1 is returned.
- *
- * Description: The _printf function produces output according to a format
- *              as described in the format string. It can handle various
- *              conversion specifiers, such as %c, %s, %d, %i, %u, %o, %x,
- *              %X, %p, %b, %r, %R, and other non-custom specifiers. It also
- *              handles custom specifiers for special string printing and
- *              ROT13 cipher. The function writes output to the std
+ * to end output to strings). On error, -1 is returned.
  */
 int _printf(const char *format, ...)
 {
@@ -48,13 +36,10 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (printed_chars);
 }
-
 /**
  * handle_conversion_specifier - Handles conversion specifier for _printf.
- *
  * @specifier: The conversion specifier to be handled.
  * @args: The va_list containing the optional arguments.
- *
  * Return: The number of characters printed for the specific specifier.
  */
 int handle_conversion_specifier(char specifier, va_list args)
@@ -95,3 +80,4 @@ int handle_conversion_specifier(char specifier, va_list args)
 			return (2);
 	}
 }
+
