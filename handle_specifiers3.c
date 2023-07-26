@@ -16,18 +16,26 @@ int print_memory_address(void *ptr)
 	int buffer_index = 0;
 	int remainder = address % 16;
 
-	buffer[buffer_index++] = '0';
-	buffer[buffer_index++] = 'x';
+	if (remainder < 10)
+		buffer[buffer_index++] = '0' + remainder;
+	else
+		buffer[buffer_index++] = 'a' + remainder - 10;
+
+	address /= 16;
 
 	do {
-		
-		if (remainder < 10)
-			buffer[buffer_index++] = '0' + remainder;
-		else
-			buffer[buffer_index++] = 'a' + remainder - 10;
-
+		remainder = address % 16;
+		buffer[buffer_index++] = remainder < 10 ? '0' + remainder : 'a' + remainder - 10;
 		address /= 16;
 	} while (address > 0);
+
+
+	if (buffer[0] != '0')
+	{
+		buffer[0] = '0';
+		buffer[1] = 'x';
+		buffer_index += 1;
+	}
 
 	for (buffer_index--; buffer_index >= 0; buffer_index--)
 	{
@@ -108,3 +116,4 @@ int print_rot13_string(const char *str)
 	}
 	return (printed_chars);
 }
+

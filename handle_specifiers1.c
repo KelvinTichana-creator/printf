@@ -76,9 +76,9 @@ int print_hexadecimal(unsigned int num, int lowercase)
 {
 	char buffer[20];
 	int length = 0;
-	char base = lowercase ? 'a' : 'A';
+	char base = lowercase ? 'A' : 'a';
 	int printed_chars = 0;
-	int remainder = num % 16;
+	int remainder;
 
 	if (num == 0)
 	{
@@ -86,15 +86,14 @@ int print_hexadecimal(unsigned int num, int lowercase)
 		return (1);
 	}
 
-	while (num > 0)
+	do
 	{
+		remainder = num % 16;
 		if (remainder < 10)
 			buffer[length++] = '0' + remainder;
 		else
 			buffer[length++] = base + remainder - 10;
-
-		num /= 16;
-	}
+	} while (num /= 16);
 
 	for (length--; length >= 0; length--)
 	{
@@ -103,3 +102,4 @@ int print_hexadecimal(unsigned int num, int lowercase)
 	}
 	return (printed_chars);
 }
+
